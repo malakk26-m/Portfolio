@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">M.D</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>My Latest Work</h1>
+            <p>Explore a selection of my web development projects, showcasing my skills in creating responsive, user-friendly, and robust applications.</p>
+        </div>
+    </section>
+
+    <section class="all-projs">
+
+        <section class="project-card">
+            <div class="desc-section">
+                <h1>QUOTELY</h1>
+                <p>This is a platform where users can share their thoughts and read other's ideas.</p>
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>ASP.NET MVC</li>
+                    <li>Bootstrap Library</li>
+                    <li>SQLITE</li>
+                    <li>Waterfall Development Strategy</li>
+                </ul>
+            </div>
+
+            <div class="proj-pics">
+                <section class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-window">
+                            <div class="carousel-track">
+                                <img src="images/Quotely4.png" class="carousel-image clone" data-index="3" alt="Cloned Image 4" />
+                                <img src="images/Quotely5.png" class="carousel-image clone" data-index="4" alt="Cloned Image 5" />
+                                <img src="images/Quotely6.png" class="carousel-image clone" data-index="5" alt="Cloned Image 6" />
+
+                                <img src="images/Quotely1.png" class="carousel-image" data-index="0" alt="Image 1" />
+                                <img src="images/Quotely2.png" class="carousel-image" data-index="1" alt="Image 2" />
+                                <img src="images/Quotely3.png" class="carousel-image" data-index="2" alt="Image 3" />
+                                <img src="images/Quotely4.png" class="carousel-image" data-index="3" alt="Image 4" />
+                                <img src="images/Quotely5.png" class="carousel-image" data-index="4" alt="Image 5" />
+                                <img src="images/Quotely6.png" class="carousel-image" data-index="5" alt="Image 6" /> 
+
+                                <img src="images/Quotely1.png" class="carousel-image clone" data-index="0" alt="Cloned Image 1" />
+                                <img src="images/Quotely2.png" class="carousel-image clone" data-index="1" alt="Cloned Image 2" />
+                                <img src="images/Quotely3.png" class="carousel-image clone" data-index="2" alt="Cloned Image 3" />
+                            </div>
+                        </div>
+                        <div class="carousel-dots">
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="project-card">
+            <div class="desc-section">
+                <h1>Nerdy: Full-stack E-learning Platform</h1>
+                <p>This secure platform provides distinct user and admin experiences for live programming courses, with all data managed in a MySQL database. Developed on a localhost server, it features a responsive UI, RESTful API, and real-time data handling.</p>
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>React.js</li>
+                    <li>Node.js / Express</li>
+                    <li>MongoDB</li>
+                    <li>Agile Methodology</li>
+                </ul>
+            </div>
+
+            <div class="proj-pics">
+                <section class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-window">
+                            <div class="carousel-track">
+                                <img src="images/nerdy4.jpg" class="carousel-image clone" data-index="3" alt="Cloned Image 4" />
+                                <img src="images/nerdy5.jpg" class="carousel-image clone" data-index="4" alt="Cloned Image 5" />
+                                <img src="images/nerdy6.jpg" class="carousel-image clone" data-index="5" alt="Cloned Image 6" />
+
+                                <img src="images/nerdy1.jpg" class="carousel-image" data-index="0" alt="Image 1" />
+                                <img src="images/nerdy2.jpg" class="carousel-image" data-index="1" alt="Image 2" />
+                                <img src="images/nerdy3.jpg" class="carousel-image" data-index="2" alt="Image 3" />
+                                <img src="images/nerdy4.jpg" class="carousel-image" data-index="3" alt="Image 4" />
+                                <img src="images/nerdy5.jpg" class="carousel-image" data-index="4" alt="Image 5" />
+                                <img src="images/nerdy6.jpg" class="carousel-image" data-index="5" alt="Image 6" /> 
+                                <img src="images/nerdy1.jpg" class="carousel-image clone" data-index="0" alt="Cloned Image 1" />
+                                <img src="images/nerdy2.jpg" class="carousel-image clone" data-index="1" alt="Cloned Image 2" />
+                                <img src="images/nerdy3.jpg" class="carousel-image clone" data-index="2" alt="Cloned Image 3" />
+                            </div>
+                        </div>
+                        <div class="carousel-dots"></div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="project-card">
+            <div class="desc-section">
+                <h1>LUX Beauty Lounge</h1>
+                <p> a responsive website for LUX Beauty Salon, focusing on user-friendly navigation and an elegant aesthetic. The site showcases services, salon locations, facilities, client testimonials, and a beauty blog, all designed to enhance the client experience.</p>
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS</li>
+                    <li>PHP</li>
+                </ul>
+            </div>
+
+            <div class="proj-pics">
+                <section class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-window">
+                            <div class="carousel-track">
+                                <img src="images/lux4.png" class="carousel-image clone" data-index="3" alt="Cloned Image 4" />
+                                <img src="images/lux5.png" class="carousel-image clone" data-index="4" alt="Cloned Image 5" />
+                                <img src="images/lux6" class="carousel-image clone" data-index="5" alt="Cloned Image 6" />
+
+                                <img src="images/lux1.png" class="carousel-image" data-index="0" alt="Image 1" />
+                                <img src="images/lux2.png" class="carousel-image" data-index="1" alt="Image 2" />
+                                <img src="images/lux3.png" class="carousel-image" data-index="2" alt="Image 3" />
+                                <img src="images/lux4.png" class="carousel-image" data-index="3" alt="Image 4" />
+                                <img src="images/lux5.png" class="carousel-image" data-index="4" alt="Image 5" />
+                                <img src="images/lux6.png" class="carousel-image" data-index="5" alt="Image 6" />
+
+                                
+                                <img src="images/lux1.png" class="carousel-image clone" data-index="0" alt="Cloned Image 1" />
+                                <img src="images/lux2.png" class="carousel-image clone" data-index="1" alt="Cloned Image 2" />
+                                <img src="images/lux3.png" class="carousel-image clone" data-index="2" alt="Cloned Image 3" />
+                            </div>
+                        </div>
+                        <div class="carousel-dots"></div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

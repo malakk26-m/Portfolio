@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+
+
+<body>
+
+    <header>
+            <nav>
+            <a href="index.html" class="logo">M.D</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+</header>
+    <section>
+        <div class="text-box">
+            <h1> Hello, I'm Malak Daoud. <br/> Welcome to my Website </h1>
+            <p> Explore the website to discover more about my passion job</p>
+            <a href="/about.html" class="hero-btn"> Who Am I?</a>
+        </div>
+
+
+         <div class="icons">
+        <a href="mailto:malakdaouud@gmail.com" aria-label="Email Me"><i class="fa fa-envelope-o"></i></a>
+        <a href="https://www.instagram.com/malak_daoud?igsh=MTFrMG84cW16cW1zYw==" target="_blank" aria-label="Instagram Profile"><i class= "fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/malak-daoud-b9969a365" target="_blank" aria-label="LinkedIn Profile"><i class="fa fa-linkedin"></i></a>
+      </div>
+
+
+    </section>
+
+
+
+ <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+
+        }
+          function hideMenu(){
+            navLinks.style.right = "-2000px";
+           
+            
+        }
+</script>
+
+
+
+
+</body>
+</html>

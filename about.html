@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+
+
+<body>
+   
+
+    
+<header>
+            <nav>
+            <a href="index.html" class="logo">M.D</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+</header>
+
+       <section class="hero-about">
+            <div class="hero-content">
+                <h1>Hi, I'm Malak!</h1>
+                <p class="tagline">A passionate Web Developer creating dynamic and user-centric digital experiences.</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/selfie2.jpg" alt="Malak - Web Developer">
+            </div>
+        </section>
+
+        <section class="about-intro">
+            <div class="container">
+                <h2>My Journey in Web Development</h2>
+                <p>
+                    I'm a dedicated web developer with a strong foundation in both front-end and back-end technologies. My journey into web development began with a fascination for how interactive experiences come to life on the internet. This passion drove me to pursue a degree in Computer Science where I graduated with a very high GPA, a testament to my commitment to mastering the craft.
+                </p>
+                <p>
+                    I thrive on building intuitive, responsive, and performant web applications. Whether it's crafting elegant user interfaces or architecting robust server-side solutions, I approach every project with meticulous attention to detail and a problem-solving mindset. I believe in writing clean, efficient code that not only meets project requirements but also provides an excellent user experience.
+                </p>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <div class="container">
+                <h2>What I Bring to the Table</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Front-End Expertise</h3>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript </li>
+                            <li>React </li>
+                            <li>Dotnet </li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Back-End Proficiency</h3>
+                        <ul>
+                            <li>Node.js (Express)</li>
+                            <li>Databases: MySQL </li>
+                            <li>Authentication & Authorization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development Methodologies</h3>
+                        <ul>
+                            <li>Agile Development</li>
+                            <li>Problem Solving & Debugging</li>
+                            <li>Test-Driven Development </li>
+                            <li>Team Collaboration</li>
+                            <li>Continuous Learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Build Something Amazing?</h2>
+                <p>
+                    I'm always eager to take on new challenges and contribute to impactful projects. Let's connect and discuss how my skills can help bring your vision to life.
+                </p>
+                <a href="/contact.html" class="btn-primary">Let's Connect</a>
+            </div>
+        </section>
+
+
+
+
+ <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+            navLinks.style.height="50vh";
+         
+
+        }
+          function hideMenu(){
+            navLinks.style.right = "-2000px";
+           
+            
+        }
+</script>
+
+
+
+
+</body>
+</html>
