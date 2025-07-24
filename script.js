@@ -300,22 +300,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// --- Global Menu Toggle Functions (unrelated to the carousel logic) ---
-// These functions are for your main navigation menu and remain separate.
+// --- Global Menu Toggle Functions ---
 const navLinks = document.getElementById("navLinks");
+const body = document.body; // Get the body element
 
 function showMenu(){
     if (navLinks) {
         navLinks.style.right = "0";
+        body.classList.add("menu-open"); // Add this line
     }
 }
 function hideMenu(){
     if (navLinks) {
-        // Using a value larger than any possible screen width to ensure it's off-screen
-        navLinks.style.right = "-2000px";
+        navLinks.style.right = "-100%"; // Changed from -2000px to match CSS more robustly
+        body.classList.remove("menu-open"); // Add this line
     }
 }
-
-// Make these functions globally accessible if they are called directly from HTML's onclick attributes
-window.showMenu = showMenu;
-window.hideMenu = hideMenu;
