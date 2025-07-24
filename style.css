@@ -1,8 +1,9 @@
-/* New global reset and variable definitions */
+/* Global Reset and Variable Definitions */
 :root {
-    --global-color-0: #172A45; /* A dark color for carousel background, similar to your base */
-    --global-color-1: #6d56f1; /* Your primary purple */
-    --global-color-white: #fff; /* White */
+    --global-color-0: #172A45;
+    --global-color-1: #6d56f1;
+    --global-color-white: #fff;
+    --dimming-overlay-color: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -11,22 +12,22 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    box-sizing: border-box; /* Good practice for all elements */
+    box-sizing: border-box;
 }
 
-/* Apply main page background and overall overflow behavior to the body */
 body {
     background-color: #0A192F;
-    overflow-x: hidden; /* Prevents horizontal scroll for the entire page */
+    overflow-x: hidden;
 }
 
 header {
-    min-height: 20vh;
+    height: 80px;
     width: 100%;
-    background-color: #0A192F; /* Keep specific background for header if needed */
+    background-color: #0A192F;
     background-position: center;
     background-size: cover;
     position: relative;
+    z-index: 9999;
 }
 
 .logo {
@@ -41,6 +42,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     display: flex;
+    width: 100%;
 }
 
 .nav-links {
@@ -60,7 +62,7 @@ nav {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    font-style: "Poppins"; /* This should ideally be font-family: "Poppins"; */
+    font-family: "Poppins";
 }
 
 .nav-links ul li::after {
@@ -85,6 +87,8 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .text-box h1 {
@@ -93,10 +97,11 @@ nav {
 }
 
 .text-box p {
-    margin: 10px 0 40px;
+    margin: 10px auto 40px auto;
     font-size: 14px;
     color: #6d56f1;
     position: relative;
+    max-width: 600px;
 }
 
 .hero-btn {
@@ -121,11 +126,14 @@ nav .fa {
     display: none;
 }
 
+/* Homepage Icons */
 .icons {
     position: absolute;
     color: #fff;
     top: 75%;
-    left: 46%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 .icons a{
@@ -142,38 +150,58 @@ nav .fa {
     transition: 0.5s;
 }
 
-/* Basic Reset & Body Styling (Optional, adjust to your site's main CSS) */
 .contactBody {
-    font-family: 'Arial', sans-serif; /* Or any other cool font you prefer, e.g., 'Poppins', sans-serif; */
-    align-items: center;
+    font-family: 'Arial', sans-serif;
     min-height: 100vh;
     margin: 0;
-    padding: 0px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactBody header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0A192F;
+}
+
+/* Important: Adjust this padding based on your header's fixed height */
+.contactBody {
+    padding-top: 90px;
+}
+
+.contact-form-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: 4px 18px 25px rgba(189, 18, 216, 0.7);
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px auto 40px auto;
 }
 
 .header2 .nav-links ul li a {
     color: #6A0DAD;
     text-decoration: none;
     font-size: 18px;
-    font-style: "Poppins";
+    font-family: "Poppins";
 }
 
 /* Contact Form Container */
 .contact-form {
     background-color: transparent;
-}
-.contact-form-container {
-    max-width: 600px;
     width: 100%;
-    background-color: transparent;
-    padding: 40px;
-    border-radius: 12px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    box-shadow: 4px 18px 25px rgba(189, 18, 216, 0.7);
-    text-align: center;
-    box-sizing: border-box;
-    margin-left: 325px;
 }
 
 .contact-form-container h2 {
@@ -190,15 +218,16 @@ nav .fa {
     background-color: transparent;
 }
 
-/* Form Groups for Layout */
+/* Form Groups */
 .form-group {
     margin-bottom: 20px;
-    text-align: left; /* Align labels and inputs to the left */
+    text-align: left;
     background-color: transparent;
+    width: 100%;
 }
 
 .form-group label {
-    display: block; /* Make labels take their own line */
+    display: block;
     margin-bottom: 8px;
     color: #fff;
     font-weight: bold;
@@ -217,7 +246,7 @@ nav .fa {
     font-size: 1em;
     color: #333;
     background-color: #fff;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -230,19 +259,19 @@ nav .fa {
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
-    border-color: #6A0DAD; /* Purple border on focus */
-    box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.2); /* Subtle purple glow on focus */
-    outline: none; /* Remove default outline */
+    border-color: #6A0DAD;
+    box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.2);
+    outline: none;
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resizing only */
+    resize: vertical;
     min-height: 120px;
 }
 
 /* Submit Button */
 button[type="submit"] {
-    background-color: #6A0DAD; /* Your chosen purple */
+    background-color: #6A0DAD;
     color: #fff;
     padding: 15px 30px;
     border: none;
@@ -251,36 +280,36 @@ button[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: auto; /* Allow button to size naturally */
+    width: auto;
     margin-top: 15px;
 }
 
 button[type="submit"]:hover {
-    background-color: #8A2BE2; /* A slightly lighter purple on hover */
-    transform: translateY(-2px); /* Subtle lift effect */
+    background-color: #8A2BE2;
+    transform: translateY(-2px);
 }
 
 button[type="submit"]:active {
-    transform: translateY(0); /* Return to original position on click */
+    transform: translateY(0);
 }
 
-/* ABOUT PAGE FROM GEMINI */
+/* ABOUT PAGE */
 .hero-about {
     display: flex;
-    flex-direction: column; /* Stack on small screens */
+    flex-direction: column;
     align-items: center;
     text-align: center;
     background-image: linear-gradient(#6A0DAD 0%, #6d56f1 100%);
     padding: 60px 20px;
     border-radius: 12px;
     margin: 40px auto;
-    max-width: 1000px; /* Slightly wider hero */
+    max-width: 1000px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
 }
 
 .hero-content {
     flex: 1;
-    margin-bottom: 30px; /* Space between content and image on small screens */
+    margin-bottom: 30px;
     background-color: transparent;
 }
 
@@ -301,20 +330,27 @@ button[type="submit"]:active {
 }
 
 .hero-image {
-    flex: 0 0 auto; /* Prevent shrinking */
-    width: 250px; /* Size of the image */
+    flex: 0 0 auto;
+    width: 250px;
     height: 250px;
-    border-radius: 50%; /* Make it round */
+    border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #6A0DAD; /* Purple border around image */
+    border: 5px solid #6A0DAD;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the area without distorting */
+    object-fit: cover;
     display: block;
+}
+
+/* Reusable container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .about-intro {
@@ -335,7 +371,7 @@ button[type="submit"]:active {
     font-size: 1.1em;
     line-height: 1.8;
     max-width: 800px;
-    margin: 0 auto 20px auto; /* Center paragraphs and add space */
+    margin: 0 auto 20px auto;
     color: #fff;
 }
 
@@ -356,10 +392,10 @@ button[type="submit"]:active {
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* This background-image will be applied if not overridden by child */
-
     gap: 30px;
     justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skill-category {
@@ -402,7 +438,7 @@ button[type="submit"]:active {
 }
 
 .skill-category ul li::before {
-    content: '•'; /* Bullet point */
+    content: '•';
     color: #6A0DAD;
     font-size: 1.2em;
     margin-right: 8px;
@@ -432,7 +468,7 @@ button[type="submit"]:active {
 
 .btn-primary {
     display: inline-block;
-    background-color: #6A0DAD; /* Lighter purple for button */
+    background-color: #6A0DAD;
     color: #fff;
     padding: 15px 35px;
     text-decoration: none;
@@ -440,17 +476,17 @@ button[type="submit"]:active {
     font-size: 1.1em;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    border: 2px solid #6A0DAD; /* Match border for hover effect */
+    border: 2px solid #6A0DAD;
 }
 
 .btn-primary:hover {
-    background-color: #6d56f1; /* Darken on hover */
+    background-color: #6d56f1;
     border: 2px solid #6d56f1;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* portfolio page */
+/* Portfolio Page */
 .portfolio-hero {
     background-color: transparent;
     padding: 80px 20px;
@@ -474,6 +510,12 @@ button[type="submit"]:active {
     margin: 0 auto;
 }
 
+.all-projs {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .project-card {
     background-image: linear-gradient(to right, #6d6d6d 0%, purple 100%);
     margin: 100px auto;
@@ -481,114 +523,113 @@ button[type="submit"]:active {
     text-align: left;
     border-radius: 12px;
     width: 80%;
-    height: 50vh; /* Keep fixed height for consistent row display on desktop */
-    display: flex; /* Enables side-by-side columns */
-    align-items: center; /* Vertically centers content within the card */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
+    max-width: 1000px;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .desc-section {
-    width: 50%; /* Takes half the width */
+    width: 50%;
     padding: 25px;
-    background-color: transparent; /* Allows parent gradient to show */
-    color: #fff; /* Ensures text is white */
+    background-color: transparent;
+    color: #fff;
 }
 .desc-section h1 {
     background-color: transparent;
     color: #fff;
     font-size: 24px;
-    margin-bottom: 10px; /* Added space below heading */
+    margin-bottom: 10px;
 }
 
 .desc-section p {
     background-color: transparent;
     color: #fff;
-    margin-bottom: 15px; /* Added space below paragraph */
+    margin-bottom: 15px;
 }
 
 .desc-section h4 {
     background-color: transparent;
     color: #fff;
-    margin-bottom: 8px; /* Added space below subheading */
+    margin-bottom: 8px;
 }
 .desc-section ul {
     background-color: transparent;
-    list-style: none; /* Remove default list bullets */
+    list-style: none;
     padding-left: 0;
 }
 .desc-section ul li {
     color: white;
     background-color: transparent;
-    margin-bottom: 5px; /* Spacing between list items */
+    margin-bottom: 5px;
     position: relative;
-    padding-left: 15px; /* Space for custom bullet */
+    padding-left: 15px;
 }
 .desc-section ul li::before {
-    content: '•'; /* Custom bullet point */
-    color: #6d56f1; /* Purple bullet */
+    content: '•';
+    color: #6d56f1;
     font-size: 1.2em;
     position: absolute;
     left: 0;
     top: 0;
 }
 
-
 /* Carousel Container within Project Card */
 .proj-pics {
-    width: 50%; /* Takes half the width */
-    height: 40vh; /* Matches parent height for consistent layout */
-    background-color: transparent; /* Allows parent gradient to show through */
-    display: flex; /* To center the carousel inside */
+    width: 50%;
+    height: 40vh;
+    background-color: transparent;
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* IMPORTANT: Hides parts of carousel outside this div */
+    overflow: hidden;
 }
 
-/* ===== Carousel ===== */
+/* Carousel */
 .carousel {
-    width: 100%; /* Take full width of its parent (.proj-pics) */
-    background: var(--global-color-0); /* Using variable for background */
-    padding: 20px 0; /* Reduced padding for tighter fit */
+    width: 100%;
+    background: var(--global-color-0);
+    padding: 20px 0;
     display: flex;
-    flex-direction: column; /* Stack inner elements vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 100%; /* Take full height of .proj-pics */
+    height: 100%;
 }
 
 .carousel-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ensure inner takes full width */
-    flex-grow: 1; /* Allow it to grow and take available space */
-    justify-content: center; /* Center content vertically if space allows */
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .carousel-window {
-    width: 90%; /* Responsive width for the visible area within the carousel */
-    max-width: 500px; /* Limits the max width of the window itself on large screens */
-    overflow: hidden; /* IMPORTANT: Hides content outside the window */
-    margin: 0 auto; /* Centers the window itself */
-    position: relative; /* Needed for navigation arrows */
-    flex-shrink: 0; /* Prevent it from shrinking */
-    height: 80%; /* Give it a height so images have something to fill */
-    display: flex; /* To help align track */
-    align-items: center; /* Vertically center the track */
+    width: 90%;
+    max-width: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    flex-shrink: 0;
+    height: 80%;
+    display: flex;
+    align-items: center;
 }
 
 .carousel-track {
     display: flex;
-    gap: 20px; /* Adjusted gap between images for better fit */
+    gap: 20px;
     transition: transform 0.5s ease-in-out;
     align-items: center;
 }
 
-
 .carousel-image {
-    width: 300px; /* Adjusted image width to be more suitable for the 50% parent */
-    height: 200px; /* Adjusted height to maintain aspect ratio with new width */
+    width: 300px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     filter: brightness(40%);
@@ -600,40 +641,40 @@ button[type="submit"]:active {
 .carousel-image.active {
     filter: brightness(100%);
     transform: scale(1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for active */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-dots {
-    margin-top: 15px; /* Adjusted margin */
+    margin-top: 15px;
     text-align: center;
-    flex-shrink: 0; /* Prevent dots from shrinking */
+    flex-shrink: 0;
 }
 
 .carousel-dot {
     display: inline-block;
     width: 10px;
     height: 10px;
-    margin: 0 5px; /* Adjusted margin */
-    background-color: #bbb; /* Can be a variable */
+    margin: 0 5px;
+    background-color: #bbb;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .carousel-dot.active {
-    background-color: var(--global-color-1); /* Using variable */
+    background-color: var(--global-color-1);
 }
 
-/* Carousel Navigation Buttons (dynamically added by JS) */
+/* Carousel Navigation Buttons */
 .carousel-nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black, slightly darker */
-    color: var(--global-color-white); /* Using variable */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--global-color-white);
     border: none;
-    padding: 12px 18px; /* Slightly larger buttons */
-    font-size: 20px; /* Adjusted font size */
+    padding: 12px 18px;
+    font-size: 20px;
     cursor: pointer;
     z-index: 10;
     border-radius: 5px;
@@ -643,7 +684,7 @@ button[type="submit"]:active {
 
 .carousel-nav-button:hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carousel-nav-button.prev {
@@ -656,42 +697,72 @@ button[type="submit"]:active {
 
 /* Responsive adjustments */
 @media(max-width: 700px){
-    /* Main navigation adjustments */
-
     html,body{
         overflow-x: hidden;
     }
     .text-box h1{
-        font-size: 20px;
-        margin-left: 15px;
+        font-size: 30px;
+        margin-left: 0;
     }
     .text-box p{
         font-size: 12px;
         padding: 10px;
-        margin-left: 35px;
+        margin-left: 0;
     }
-    .nav-links ul li{
-        display: block;
-    }
+
     .nav-links{
-        position: absolute;
+        position: fixed;
         background: #0A192F;
-        max-height: 15vh;
-        width: 100%;
+        height: 100vh;
+        width: 70%;
         top: 0;
-        right: -600px;
+        right: -100%;
         text-align: left;
-        z-index: 2;
-        transition: 1s;
+        z-index: 100;
+        transition: right 0.6s ease;
+        overflow-y: auto;
+        padding-top: 60px;
     }
 
+    /* Dimming Overlay */
+    body.menu-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--dimming-overlay-color);
+        z-index: 99;
+        opacity: 1;
+        transition: opacity 0.6s ease;
+        pointer-events: auto;
+    }
 
+    body:not(.menu-open)::after {
+        opacity: 0;
+        pointer-events: none;
+    }
 
+    body.menu-open {
+        overflow: hidden;
+    }
 
     .nav-links ul{
         padding: 30px;
     }
 
+    .nav-links .fa-times{
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 25px;
+        right: auto;
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 101;
+    }
 
     nav .fa{
         display: block;
@@ -699,53 +770,62 @@ button[type="submit"]:active {
         color: #fff;
         font-size: 22px;
         cursor: pointer;
-    }
-    header ul li a::before{
-        content: '';
-        position:absolute;
-        top:0;
-        left: 0;
-        width:100%;
-        height:100%;
-        background-color: #6d56f1;
-        z-index:-1;
-        opacity: .8;
+        z-index: 101;
     }
 
-    
-
-    .text-box h1{
-        font-size: 30px;
+    .nav-links ul li{
+        display: block;
+        margin-top: 0;
+        padding: 15px 0;
     }
+
+    .nav-links ul li a{
+        font-size: 20px;
+        padding: 0;
+        display: block;
+    }
+
     .icons{
-        position: absolute;
-        color: #fff;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 18px;
         top: 65%;
-        left: 42.5%;
+        margin-top: 20px;
     }
 
     .icons a{
         text-decoration: none;
     }
 
-
-
     /* About page responsiveness */
     .container{
-        padding: 30px;
+        padding: 0 15px;
     }
     .hero-about{
-        margin: 20px;
+        margin: 20px 15px;
         padding:20px;
     }
+    .hero-about h1 {
+        font-size: 2.5em;
+    }
+    .hero-about .tagline {
+        font-size: 1.1em;
+    }
+
     .skills-grid{
         display: flex;
         flex-direction: column;
+        padding: 15px;
     }
     .contact-form-container{
-        width: 100%;
-        margin: auto;
+        width: calc(100% - 30px);
+        margin: 20px auto 40px auto;
+        padding: 20px;
+    }
+
+    /* Important: Adjust padding if header height changes on mobile */
+    .contactBody {
+        padding-top: 90px;
     }
 
     .skills-grid{
@@ -754,54 +834,238 @@ button[type="submit"]:active {
 
     /* Project card specific responsiveness for stacking */
     .portfolio-hero{
-        width: 80%;
+        width: calc(100% - 30px);
         margin:auto;
     }
-    
+
     .project-card {
-        flex-direction: column; /* Stacks description and slider vertically */
-        height: auto; /* Allows height to adjust to content */
-        width: 90%; /* Make it slightly narrower for mobile */
-        margin: 50px auto; /* Adjust margin for stacked cards */
+        flex-direction: column;
+        height: auto;
+        width: calc(100% - 30px);
+        margin: 50px auto;
     }
 
     .desc-section,
     .proj-pics {
-        width: 100%; /* Both take full width when stacked */
-        height: auto; /* Adjust height as needed */
-        padding: 15px; /* Adjust padding for mobile */
+        width: 100%;
+        height: auto;
+        padding: 15px;
     }
-    
+
     .proj-pics {
-        min-height: 250px; /* Ensure proj-pics has a minimum height even if images are small */
+        min-height: 250px;
     }
 
     .carousel {
-        padding: 10px 0; /* Reduced padding on mobile */
+        padding: 10px 0;
     }
 
     .carousel-window {
-        width: 95%; /* Adjust carousel window for mobile */
-        max-width: none; /* No max-width on mobile */
-        height: 200px; /* Set a specific height for the window on mobile */
+        width: 95%;
+        max-width: none;
+        height: 200px;
     }
 
     .carousel-image {
-        width: 250px; /* Smaller image width on mobile */
-        height: 150px; /* Smaller image height on mobile */
+        width: 250px;
+        height: 150px;
         object-fit: cover;
     }
 
     .carousel-track {
-        gap: 10px; /* Reduce gap on mobile */
+        gap: 10px;
     }
 
     .carousel-nav-button {
-        font-size: 18px; /* Smaller arrows */
+        font-size: 18px;
         padding: 8px 12px;
     }
 
     .carousel-dots {
-        margin-top: 10px; /* Smaller margin for dots */
+        margin-top: 10px;
+    }
+}
+
+/* Tablet and Larger Screens */
+@media (min-width: 701px) and (max-width: 1024px) {
+    .logo {
+        font-size: 28px;
+        margin-right: 20px;
+    }
+    nav {
+        padding: 1.5% 4%;
+    }
+    .nav-links ul li a {
+        font-size: 16px;
+    }
+
+    .text-box h1 {
+        font-size: 44px;
+    }
+    .text-box p {
+        font-size: 13px;
+    }
+    .icons {
+        top: 70%;
+    }
+
+    /* About page adjustments for tablets */
+    .hero-about {
+        padding: 50px 30px;
+        margin: 30px auto;
+        max-width: 90%;
+    }
+    .hero-about h1 {
+        font-size: 3em;
+    }
+    .hero-about .tagline {
+        font-size: 1.3em;
+    }
+    .about-intro p {
+        font-size: 1em;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .skill-category {
+        padding: 25px;
+    }
+
+    /* Contact page adjustments for tablets */
+    .contact-form-container {
+        max-width: 500px;
+        padding: 30px;
+    }
+    .contact-form-container h2 {
+        font-size: 2em;
+    }
+    .contact-form-container p {
+        font-size: 1em;
+    }
+
+    /* Portfolio page adjustments for tablets */
+    .portfolio-hero {
+        padding: 60px 20px;
+        margin: 30px auto;
+        max-width: 90%;
+    }
+    .project-card {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+        margin: 70px auto;
+    }
+    .desc-section,
+    .proj-pics {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+    .proj-pics {
+        min-height: 300px;
+    }
+    .carousel-image {
+        width: 350px;
+        height: 220px;
+    }
+}
+
+/* Very Large Screens */
+@media (min-width: 1400px) {
+    /* Important: Consider if this min-height should be fixed 'height' like header */
+    header {
+        min-height: 15vh;
+    }
+    nav {
+        padding: 1.5% 8%;
+    }
+    .logo {
+        font-size: 36px;
+    }
+    .nav-links ul li a {
+        font-size: 20px;
+    }
+
+    .text-box h1 {
+        font-size: 60px;
+    }
+    .text-box p {
+        font-size: 16px;
+        max-width: 700px;
+    }
+    .hero-btn {
+        padding: 15px 40px;
+        font-size: 15px;
+    }
+    .icons {
+        top: 78%;
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 1400px;
+    }
+    .hero-about {
+        padding: 80px 40px;
+        margin: 60px auto;
+        max-width: 1100px;
+    }
+    .hero-about h1 {
+        font-size: 4em;
+    }
+    .hero-about .tagline {
+        font-size: 1.5em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+    }
+    .skill-category {
+        padding: 40px;
+    }
+
+    .cta-section h2 {
+        font-size: 3.5em;
+    }
+    .cta-section p {
+        font-size: 1.3em;
+    }
+    .btn-primary {
+        padding: 18px 40px;
+        font-size: 1.2em;
+    }
+
+    .portfolio-hero {
+        padding: 100px 40px;
+        margin: 60px auto;
+        max-width: 1100px;
+    }
+    .portfolio-hero h1 {
+        font-size: 4em;
+    }
+    .portfolio-hero p {
+        font-size: 1.3em;
+    }
+
+    .project-card {
+        flex-direction: row;
+        height: 60vh;
+        width: 85%;
+        max-width: 1100px;
+        margin: 120px auto;
+    }
+
+    .desc-section,
+    .proj-pics {
+        width: 50%;
+        padding: 30px;
+        height: 55vh;
+    }
+    .carousel-image {
+        width: 400px;
+        height: 250px;
     }
 }
